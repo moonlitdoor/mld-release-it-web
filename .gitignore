@@ -1,8 +1,8 @@
 .firebase
 .vscode
 node_modules
-public
-!public/.placeholder
+public/*
+!.placeholder
 functions/lib
 .editorconfig
 .DS_Store
