@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "dev-releaseit"
+    "default": "mld-release-it-beta",
+    "prod": "mld-release-it-prod"
   }
 }

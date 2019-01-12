@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <span>ReleaseIt</span>
+    <span class="fill"></span>
+    <a matTooltip="Survey" mat-icon-button routerLink="survey">
+        <mat-icon aria-label="">assignment</mat-icon>
+    </a>
+    <button matTooltip="Login" mat-icon-button (click)="openAccountDialog()">
+        <mat-icon aria-label="">account_box</mat-icon>
+    </button>
+</mat-toolbar>
+<router-outlet></router-outlet>
