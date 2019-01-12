@@ -1,7 +1,12 @@
 language: node_js
 
 script:
-  - npm --version
+  - npm run-script version
+  - npm run-script install-root
+  - npm run-script install-functions
+  - npm run-script install-hosting
+  - npm run-script build-dev
+  - npm run-script deploy-dev
 
 # deploy:
   # provider: firebase
