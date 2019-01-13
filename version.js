@@ -1,5 +1,5 @@
 var e = require("child_process").exec;
-let fs = require("fs");
+var fs = require("fs");
 const cmd1 = "git describe --tags";
 const cmd2 = "git status --porcelain";
 
