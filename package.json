@@ -12,11 +12,9 @@
     "install-functions": "npm --prefix functions install",
     "install-hosting": "npm --prefix hosting install",
     "version": "node version",
-    "build-dev": "cd functions && npm run-script build-dev && cd ../hosting && npm run-script build-dev",
     "build-beta": "cd functions && npm run-script build-beta && cd ../hosting && npm run-script build-beta",
     "build-prod": "cd functions && npm run-script build-prod && cd ../hosting && npm run-script build-prod",
-    "deploy-dev": "node_modules/.bin/firebase deploy --project dev --token 1/z3Jv7v4j1LF2J-_Drw1obwm5JgzUDlhBVUK8j9AOo_Q",
-    "deploy-beta": "node_modules/.bin/firebase deploy --project beta --token 1/z3Jv7v4j1LF2J-_Drw1obwm5JgzUDlhBVUK8j9AOo_Q",
-    "deploy-prod": "node_modules/.bin/firebase deploy --project prod --token 1/z3Jv7v4j1LF2J-_Drw1obwm5JgzUDlhBVUK8j9AOo_Q"
+    "deploy-beta": "node_modules/.bin/firebase deploy --project beta",
+    "deploy-prod": "node_modules/.bin/firebase deploy --project prod"
   }
 }
