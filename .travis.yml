@@ -2,7 +2,7 @@ language: node_js
 
 script:
   - npm run-script version
-  - firebase
+  - node_modules/.bin/firebase
     #  - npm run-script install-root
     #  - npm run-script install-functions
     #  - npm run-script install-hosting

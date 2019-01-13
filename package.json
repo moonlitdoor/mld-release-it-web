@@ -1,5 +1,8 @@
 {
   "name": "mld-release-it-web",
+  "dependencies": {
+    "firebase-tools": "6.2.2"
+  },
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
