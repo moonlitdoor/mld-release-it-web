@@ -1,4 +1,4 @@
-let exec = require("child_process").exec;
+let e = require("child_process").exec;
 let fs = require("fs");
 const cmd1 = "git describe --tags";
 const cmd2 = "git status --porcelain";
@@ -8,8 +8,8 @@ const data = {
     date: new Date().getTime()
 };
 
-exec(cmd1, function (error, stdout1) {
-    exec(cmd2, function (error, stdout2) {
+e(cmd1, function (error, stdout1) {
+    e(cmd2, function (error, stdout2) {
         if (stdout2.trim().length > 0) {
             let version = stdout1.trim();
             if (version.indexOf("-g") !== -1) {
