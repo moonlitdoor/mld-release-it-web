@@ -10,6 +10,7 @@
     "url": "https://github.com/moonlitdoor/mld-release-it-web"
   },
   "scripts": {
+    "postinstall": "cd functions && npm install && cd ../release-it && npm install",
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
     "serve": "npm run build && firebase serve --only functions",
