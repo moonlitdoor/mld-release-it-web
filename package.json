@@ -1,6 +1,7 @@
 {
   "name": "mld-release-it-web",
   "dependencies": {
+    "@angular/cli": "7.2.1",
     "firebase-tools": "6.2.2"
   },
   "license": "UNLICENSED",
@@ -10,21 +11,12 @@
     "url": "https://github.com/moonlitdoor/mld-release-it-web"
   },
   "scripts": {
-    "postinstall": "cd functions && npm install && cd ../release-it && npm install",
-    "lint": "tslint --project tsconfig.json",
-    "build": "tsc",
-    "serve": "npm run build && firebase serve --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "install-root": "npm install",
-    "install-functions": "npm --prefix functions install",
-    "install-hosting": "npm --prefix hosting install",
-    "version": "node version",
-    "build-beta": "cd functions && npm run-script build-beta && cd ../hosting && npm run-script build-beta",
-    "build-prod": "cd functions && npm run-script build-prod && cd ../hosting && npm run-script build-prod",
-    "deploy-beta": "node_modules/.bin/firebase deploy --project beta",
-    "deploy-prod": "node_modules/.bin/firebase deploy --project prod"
+    "postinstall": "npm --prefix functions install && npm --prefix release-it install",
+    "serve": "node_modules/.bin/firebase serve",
+    "watch-fun": "cd functions && node_modules/.bin/tsc --watch",
+    "watch-web": "cd release-it && ../node_modules/.bin/ng build --watch",
+    "build-fun": "cd functions && node_modules/.bin/tsc",
+    "build-web": "cd release-it && ../node_modules/.bin/ng build --prod",
+    "version": "node version"
   }
 }

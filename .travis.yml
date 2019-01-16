@@ -2,19 +2,29 @@ language: node_js
 node_js:
   - "node"
 
+git:
+  depth: false
+
+branches:
+  only:
+    - master
+    - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
+
+env:
+  secure: aOJ/YBpLLoYL1gVpypaXjbkybYMUFSnpi/DPVbaNFG36Cq3GBQYilBlU8EiDBMp5LX0WSiRyGB24RL0VTJcUl9vlgNOK1eZtZdQ35ewqPozDgBU9PQQp7xax/8kZyGAZLlgFlml7J7sopovuYYZRYHtlbum8Fg2egG+y/WtPBB0BdHwn9AbzRHtREMy1YqcnSt7gml72sdB5p0/lr2l876+u8IAH34/XdKH8RP8aDc+TwE7UdPefJPLFImRlmYLUQZStrwTrz9y2A2KVgITtfjh04EGXFBvj56ETY0Nn5+hj0Ofg9xOP39tuvz1SkhZJ0huNlmrYZsv8kIjsr3KH+uyuyC8mp8clu5cmdOg17Shsb683vpUrjTvbLeAYdhLzo2yEftY2QjxyA9a8zF0c66ptj3Iy1pTwUV0hbp0z8DXTsxSqFpn/k0uSokVMlt/PKS1bYJNsf53yMRrbSU5b0K0PBKETtPOLWEfueUEWXrH9B5Y6BWPFih6iNKm1ePBTye99+JdIpf9h1gh/1lHP6J6butwY13dhXLkD6sJAMpwysp0T1MFB8t8u62mxxNbCkr2E95bgp6Ds8OYBhGf9Z570K7jWVpOUmR3q99EfMg7xsNR6dQ19aOsJ99nnBaLGUzdbPX1GEYaQaNasCBfNawmeyi4vfoD8hMrThxkEhAE=
+
+
 script:
   - npm run-script version
-  - node_modules/.bin/firebase
-    #  - npm run-script install-root
-    #  - npm run-script install-functions
-    #  - npm run-script install-hosting
-    #  - npm run-script build-dev
-    #  - npm run-script deploy-dev
+  - npm run-script build-fun
+  - npm run-script build-web
 
-# deploy:
-  # provider: firebase
-  # token:
-    # secure: vNe/i8sVdH2KZRbhygGyR5sRLzKIgMgkhqa/Zi5AJd+/+nTsLhrJJgXlS75gnK5/uHZdLTwXTUCsPHxH6K4xgRMTGXW/BU5mqADkNSDI2sy/ud8NaiQrWDZcpjTh3+peFxina6nvqWyuM5wG4skISm0mGIe6rjEUXniFb3teGvMkhFZgeX1q0dA+OMHvz3mwcVb4xFrWQG13etZ3oqV6994y3BWb8FgcotJnfvnA6Mg6JbLRGrM8YjVLQVdMcfL2/nFjoORJO5D3SZaELtISr1STA2Pq0+zPXHw5ykOYx33IDUiQmc2v1Mz21kaO1UY0PtCs71OmvaLWFumv8vY2BIvmx8zjf/b0wYHp+wOC2PQ3Ie1p4IPqRd0oNK2H/Z483YarKfSZsPuhmBZXHcSR8d6+U4DNTekQ/WskeGkGjGdBJ7d5jz7ETFNefqmRJ5iDbHid0sdM19MObELR5fF/r4YozNDyA57F8d+BbwGuRxIJ0xbvb2CsbRaQJjMJXAh7X6sIHnxFzRwmFvpevlXdsNicr3FcjGNaDCYuSGKnN8dqQrWNTR+FWVpafv3Akg8l5Q6FVoWedrBNubwg6nAJ9qMqQMoiIAVcLHorKgyDCAn6h3xuhukzailQpTOzB4T0+vM6H639fQxCkwbC70mrKgpS12EhtG1KzYaZWjvKYNY=
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: "node_modules/.bin/firebase deploy --token $CI_TOKEN"
+#  on:
+#    tags: true
 
 notifications:
   slack:
