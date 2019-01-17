@@ -14,7 +14,7 @@ export class AboutDialogComponent {
     static open(dialog: MatDialog): MatDialogRef<AboutDialogComponent> {
         return dialog.open(AboutDialogComponent, {
             disableClose: false,
-            width: '400px'
+            width: '500px'
         });
     }
 

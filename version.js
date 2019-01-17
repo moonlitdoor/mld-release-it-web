@@ -23,6 +23,7 @@ e(cmd1, function (error, stdout1) {
         } else {
             data.version = stdout1.trim();
         }
+        console.log(data);
         fs.writeFileSync("./release-it/src/about.json", JSON.stringify(data));
         fs.writeFileSync("./functions/about.ts", "const data = " + JSON.stringify(data) + ";\nexport default data;");
     });
