@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser'
+import {DomSanitizer} from '@angular/platform-browser';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Survey} from './survey'
+import {Survey} from './survey';
 
 @Component({
     templateUrl: 'survey.component.html'
@@ -17,7 +17,8 @@ export class SurveyComponent implements OnInit, OnDestroy {
             'https://docs.google.com/forms/d/e/1FAIpQLSftN8tFvP18hOzc-dHcyXPRgfqJ8hXIHCVdN_OmiChXq2euPQ/viewform?embedded=true'), 1834)
     ];
 
-    constructor(public sanitizer: DomSanitizer, private route: ActivatedRoute, private router: Router) { }
+    constructor(public sanitizer: DomSanitizer, private route: ActivatedRoute, private router: Router) {
+    }
 
     ngOnInit() {
         this.subscription = this.route.params.subscribe(params => {

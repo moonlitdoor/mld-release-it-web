@@ -8,9 +8,6 @@ export class AboutService {
 
     constructor(private http: HttpClient) {
         this.data = this.http.get('about.json').toPromise();
-        // .subscribe(data =>
-        //     this.data = data
-        // );
     }
 
     getVersion(): Promise<string> {
