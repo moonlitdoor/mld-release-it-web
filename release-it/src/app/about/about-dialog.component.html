@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>About</h1>
+<mat-dialog-content>
+    <mat-list>
+        <mat-list-item>
+            <div fxFlex="50" fxLayoutAlign="start none">Version:</div>
+            <div fxFlex="50" fxLayoutAlign="end none">{{version | async}}</div>
+        </mat-list-item>
+        <mat-list-item>
+            <div fxFlex="50" fxLayoutAlign="start none">Build Date:</div>
+            <div fxFlex="50" fxLayoutAlign="end none">{{date | async | date:'longDate'}}</div>
+        </mat-list-item>
+    </mat-list>
+</mat-dialog-content>

@@ -1,11 +1,19 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="start center" class="mat-elevation-z6">
     <span>ReleaseIt</span>
-    <span class="fill"></span>
+    <span fxFlex></span>
     <a matTooltip="Survey" mat-icon-button routerLink="survey">
         <mat-icon aria-label="">assignment</mat-icon>
     </a>
     <button matTooltip="Login" mat-icon-button (click)="openAccountDialog()">
         <mat-icon aria-label="">account_box</mat-icon>
     </button>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
 </mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="openAboutDialog()">About</button>
+</mat-menu>
+
 <router-outlet></router-outlet>
