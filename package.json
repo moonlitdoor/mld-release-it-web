@@ -1,9 +1,5 @@
 {
   "name": "mld-release-it-web",
-  "dependencies": {
-    "@angular/cli": "7.2.2",
-    "firebase-tools": "6.3.0"
-  },
   "license": "UNLICENSED",
   "private": true,
   "repository": {
@@ -12,7 +8,7 @@
   },
   "scripts": {
     "postinstall": "npm --prefix functions install && npm --prefix release-it install",
-    "serve": "node_modules/.bin/firebase serve",
+    "serve": "firebase serve",
     "watch-fun": "cd functions && node_modules/.bin/tsc --watch",
     "watch-web": "cd release-it && ../node_modules/.bin/ng build --watch",
     "build-fun": "cd functions && node_modules/.bin/tsc",

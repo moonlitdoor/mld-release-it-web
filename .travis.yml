@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "node"
 
-install:
-  - npm ci
-
 git:
   depth: false
 
@@ -17,8 +14,9 @@ env:
   secure: aOJ/YBpLLoYL1gVpypaXjbkybYMUFSnpi/DPVbaNFG36Cq3GBQYilBlU8EiDBMp5LX0WSiRyGB24RL0VTJcUl9vlgNOK1eZtZdQ35ewqPozDgBU9PQQp7xax/8kZyGAZLlgFlml7J7sopovuYYZRYHtlbum8Fg2egG+y/WtPBB0BdHwn9AbzRHtREMy1YqcnSt7gml72sdB5p0/lr2l876+u8IAH34/XdKH8RP8aDc+TwE7UdPefJPLFImRlmYLUQZStrwTrz9y2A2KVgITtfjh04EGXFBvj56ETY0Nn5+hj0Ofg9xOP39tuvz1SkhZJ0huNlmrYZsv8kIjsr3KH+uyuyC8mp8clu5cmdOg17Shsb683vpUrjTvbLeAYdhLzo2yEftY2QjxyA9a8zF0c66ptj3Iy1pTwUV0hbp0z8DXTsxSqFpn/k0uSokVMlt/PKS1bYJNsf53yMRrbSU5b0K0PBKETtPOLWEfueUEWXrH9B5Y6BWPFih6iNKm1ePBTye99+JdIpf9h1gh/1lHP6J6butwY13dhXLkD6sJAMpwysp0T1MFB8t8u62mxxNbCkr2E95bgp6Ds8OYBhGf9Z570K7jWVpOUmR3q99EfMg7xsNR6dQ19aOsJ99nnBaLGUzdbPX1GEYaQaNasCBfNawmeyi4vfoD8hMrThxkEhAE=
 
 script:
+  - npm install -g firebase-tools@6.3.0
+  - npm install -g @angular/cli@7.2.2
   - git reset HEAD --hard
-  - git status
   - npm run-script version
   - npm run-script build-fun
   - npm run-script build-web
@@ -40,4 +38,3 @@ notifications:
   slack:
     rooms:
       secure: U5i5xZpKuQTwm0AoZJF7C33mXbbWKsR92OMwHsTswlQ/JMUtQvhol+DJO90Mk/RVJfWMs0h6/9bIoG8fGUg03qMr76vGYQOVvR0pQfMPILJwYyzcYNwP5SUAcZ61n3BE2Rv/WfFzvFdVQ5fVfn3q1tGmFR5XhyuDsoIi0i6NjDUJrjW9XmnPx/KqAjUfn+EVv7mRQ0HtpsalkpQ8NS0OnvUgBDqGcf8VT7lewq8WvhKuZDXvNK4jMDp+MdfHqQkun+uJcDegpCNj/csqxe8xP0M2CxbR0MQeb6PRtyFd6AH8dxIEsYZqXx5Bppu8YKwN9lQUj/rKYi/IUyw/v8CscOZIepNehz+5R/rR+udZ4YnM7VN1fIdrnq3ojk2c43+gJ8/p+h7JClMsNOl1Cof63AwbzvxbpCOUu3kfwXhV5qrqj92YPL+6TbCSRx42sDeIN9rJa2VN1uXKuAewG44f7X9wbhegHmslomWRMb0mpq7v6nT4Tf6bhAG5tnDy9g8bXDDd/e7aURykOIlfYMJrf9sI8tdH+3Zl8c1/UHYrE4Pl60PAwnJQ+DTZjmtk/6N2XfuFw1WWtSIjCoFKGbg57jE/9u4GCwaTcU9oE3nlgaZnQVmRHm37iIJ4yc9FfElA014ciTHwpgBmPqyse9VEIkJND1QEk7XusInSSDcrDXA=
-
