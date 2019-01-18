@@ -20,11 +20,17 @@ script:
   - npm run-script build-web
 
 deploy:
-  provider: script
-  skip_cleanup: true
-  script: "node_modules/.bin/firebase deploy --project default --token $CI_TOKEN"
-#  on:
-#    tags: true
+  - provider: script
+    skip_cleanup: true
+    script: "node_modules/.bin/firebase deploy --project default --token $CI_TOKEN"
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: "node_modules/.bin/firebase deploy --project prod --token $CI_TOKEN"
+    on:
+      tags: true
+      branch: "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}$/"
 
 notifications:
   slack:
