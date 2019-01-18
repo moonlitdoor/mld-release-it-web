@@ -13,10 +13,6 @@
   "hosting": {
     "public": "public",
     "ignore": [
-      ".placeholder",
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
     ],
     "rewrites": [
       {
@@ -33,5 +29,8 @@
         }
       ]
     }
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

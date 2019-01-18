@@ -16,6 +16,7 @@ env:
 script:
   - npm install -g firebase-tools@6.3.0
   - npm install -g @angular/cli@7.2.2
+  - git status
   - git reset HEAD --hard
   - npm run-script version
   - npm run-script build-fun
@@ -24,12 +25,12 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: "node_modules/.bin/firebase deploy --project default --token $CI_TOKEN"
+    script: "firebase deploy --project default --token $CI_TOKEN"
     on:
       branch: master
   - provider: script
     skip_cleanup: true
-    script: "node_modules/.bin/firebase deploy --project prod --token $CI_TOKEN"
+    script: "firebase deploy --project prod --token $CI_TOKEN"
     on:
       tags: true
       branch: "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}$/"
