@@ -11,18 +11,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgModule} from '@angular/core';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {LoginDialogComponent} from './login/login.dialog.component';
-import {SurveyComponent} from './survey/survey.component';
 import {AboutDialogComponent} from './about/about-dialog.component';
 import {AboutService} from './about/about.service';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HomeComponent} from "./home/home.component";
+import {LoginDialogComponent} from './login/login.dialog.component';
+import {SurveyComponent} from './survey/survey.component';
 
 
 @NgModule({
     declarations: [
         AboutDialogComponent,
         AppComponent,
+        HomeComponent,
         LoginDialogComponent,
         SurveyComponent
     ],
