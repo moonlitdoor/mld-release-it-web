@@ -10,9 +10,9 @@
     "postinstall": "npm --prefix functions install && npm --prefix release-it install",
     "serve": "firebase serve",
     "watch-fun": "cd functions && node_modules/.bin/tsc --watch",
-    "watch-web": "cd release-it && ../node_modules/.bin/ng build --watch",
+    "watch-web": "cd release-it && ng build --watch",
     "build-fun": "cd functions && node_modules/.bin/tsc",
-    "build-web": "cd release-it && ../node_modules/.bin/ng build --prod",
+    "build-web": "cd release-it && ng build --prod",
     "version": "node version"
   }
 }
