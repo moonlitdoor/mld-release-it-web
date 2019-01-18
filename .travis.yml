@@ -16,7 +16,6 @@ env:
 script:
   - git status
   - npm run-script version
-  - git status
   - npm run-script build-fun
   - npm run-script build-web
 
