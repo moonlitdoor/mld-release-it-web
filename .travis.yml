@@ -18,19 +18,19 @@ script:
   - npm install -g @angular/cli@7.2.2
   - git status
   - git reset HEAD --hard
-  - npm run-script version
-  - npm run-script build-fun
-  - npm run-script build-web
+  - npm run version
+  - npm run build-fun
+  - npm run build-web
 
 deploy:
   - provider: script
     skip_cleanup: true
-    script: "firebase deploy --project default --token $CI_TOKEN"
+    script: "npm run build-web-beta && firebase deploy --project default --token $CI_TOKEN"
     on:
       branch: master
   - provider: script
     skip_cleanup: true
-    script: "firebase deploy --project prod --token $CI_TOKEN"
+    script: "npm run build-web-prod && firebase deploy --project prod --token $CI_TOKEN"
     on:
       tags: true
       branch: "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}$/"
