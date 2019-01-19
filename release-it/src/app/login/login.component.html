@@ -1,0 +1,8 @@
+<button *ngIf="afAuth.user | async as user; else showLogin" matTooltip="Logout" mat-button (click)="logout()">
+    Hello {{ user.displayName }}</button>
+<ng-template #showLogin>
+    <button matTooltip="Login with GitHub" mat-button (click)="login()">
+        <mat-icon aria-label="github" svgIcon="github"></mat-icon>
+        <span> GitHub</span>
+    </button>
+</ng-template>

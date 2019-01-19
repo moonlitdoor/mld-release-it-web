@@ -4,13 +4,9 @@
     <a matTooltip="Survey" mat-icon-button routerLink="survey">
         <mat-icon aria-label="">assignment</mat-icon>
     </a>
-    <button matTooltip="Login with GitHub" mat-button (click)="openAccountDialog()">
-        <mat-icon aria-label="github" svgIcon="github"></mat-icon>
-        <span> GitHub</span>
-    </button>
-    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <login></login>
+    <button matTooltip="Menu" mat-icon-button [matMenuTriggerFor]="appMenu">
         <mat-icon>more_vert</mat-icon>
-
     </button>
 </mat-toolbar>
 

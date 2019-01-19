@@ -10,12 +10,16 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgModule} from '@angular/core';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {ENVIRONMENT} from '../environments/environment';
 
 import {AboutDialogComponent} from './about/about-dialog.component';
 import {AboutService} from './about/about.service';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from "./home/home.component";
+import {LoginComponent} from './login/login.component';
 import {LoginDialogComponent} from './login/login.dialog.component';
 import {SurveyComponent} from './survey/survey.component';
 
@@ -25,6 +29,7 @@ import {SurveyComponent} from './survey/survey.component';
         AboutDialogComponent,
         AppComponent,
         HomeComponent,
+        LoginComponent,
         LoginDialogComponent,
         SurveyComponent
     ],
@@ -33,6 +38,8 @@ import {SurveyComponent} from './survey/survey.component';
         BrowserAnimationsModule,
         HttpClientModule,
         FlexLayoutModule,
+        AngularFireModule.initializeApp(ENVIRONMENT.firebase.config),
+        AngularFireAuthModule,
         MatButtonModule,
         MatDialogModule,
         MatIconModule,
