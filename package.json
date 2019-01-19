@@ -12,6 +12,7 @@
     "watch-fun": "cd functions && node_modules/.bin/tsc --watch",
     "watch-web": "cd release-it && ng build --watch",
     "build-fun": "cd functions && node_modules/.bin/tsc",
+    "build-web": "cd release-it && ng build --prod",
     "build-web-beta": "cd release-it && ng build --prod --configuration=beta",
     "build-web-prod": "cd release-it && ng build --prod --configuration=production",
     "version": "node version"
