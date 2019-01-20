@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {auth} from 'firebase/app';
 
@@ -6,15 +6,29 @@ import {auth} from 'firebase/app';
     selector: 'login',
     templateUrl: 'login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-    provider: auth.GithubAuthProvider = new auth.GithubAuthProvider().addScope("repo,read:user,read:org") as auth.GithubAuthProvider;
+    provider: auth.GithubAuthProvider;
 
     constructor(public afAuth: AngularFireAuth) {
+        this.provider = new auth.GithubAuthProvider();
+        this.provider = this.provider.addScope("repo,read:user,read:org") as auth.GithubAuthProvider;
+        this.provider = this.provider.setCustomParameters({'allow_signup': 'false'}) as auth.GithubAuthProvider;
+    }
+
+    ngOnInit() {
+        this.afAuth.auth.getRedirectResult().then(
+            onFulFilled => {
+                if (onFulFilled.credential) {
+
+                    let token = onFulFilled.credential['accessToken'];
+                }
+            }
+        )
     }
 
     login() {
-        this.afAuth.auth.signInWithPopup(this.provider);
+        this.afAuth.auth.signInWithRedirect(this.provider);
     }
 
     logout() {
