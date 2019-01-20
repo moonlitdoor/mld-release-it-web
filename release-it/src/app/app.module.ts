@@ -12,6 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgModule} from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import {ENVIRONMENT} from '../environments/environment';
 
 import {AboutDialogComponent} from './about/about-dialog.component';
@@ -22,7 +23,6 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from './login/login.component';
 import {LoginDialogComponent} from './login/login.dialog.component';
 import {SurveyComponent} from './survey/survey.component';
-
 
 @NgModule({
     declarations: [
@@ -40,6 +40,7 @@ import {SurveyComponent} from './survey/survey.component';
         FlexLayoutModule,
         AngularFireModule.initializeApp(ENVIRONMENT.firebase.config),
         AngularFireAuthModule,
+        AngularFirestoreModule,
         MatButtonModule,
         MatDialogModule,
         MatIconModule,
@@ -50,7 +51,8 @@ import {SurveyComponent} from './survey/survey.component';
         AppRoutingModule
     ],
     providers: [
-        AboutService
+        AboutService,
+        AngularFirestore
     ],
     bootstrap: [
         AppComponent
