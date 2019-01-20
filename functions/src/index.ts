@@ -6,7 +6,11 @@ import * as functions from 'firebase-functions';
 // export const helloWorld = functions.https.onRequest((request, response) => {
   // response.send("Hello from Brian!");
 // });
-exports.manual_triggers = functions.pubsub.topic('manual_triggers').onPublish((message) => {
+exports.collect_organizations = functions.auth.user().onCreate((user) => {
+
+});
+exports.manualTriggers = functions.pubsub.topic('manualTriggers').onPublish((message) => {
     console.log("yea");
     console.log(message);
+    return true;
 });
