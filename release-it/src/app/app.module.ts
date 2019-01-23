@@ -7,6 +7,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgModule} from '@angular/core';
@@ -24,15 +25,19 @@ import {LoginComponent} from './login/login.component';
 import {LoginDialogComponent} from './login/login.dialog.component';
 import {SurveyComponent} from './survey/survey.component';
 import {Analytics} from "./analytics/analytics";
+import {TrunkbasedComponent} from "./trunkbased/trunkbased.component";
+import {GitflowComponent} from "./gitflow/gitflow.component";
 
 @NgModule({
     declarations: [
         AboutDialogComponent,
         AppComponent,
+        GitflowComponent,
         HomeComponent,
         LoginComponent,
         LoginDialogComponent,
-        SurveyComponent
+        SurveyComponent,
+        TrunkbasedComponent
     ],
     imports: [
         BrowserModule,
@@ -48,6 +53,7 @@ import {Analytics} from "./analytics/analytics";
         MatIconModule,
         MatMenuModule,
         MatListModule,
+        MatTabsModule,
         MatToolbarModule,
         MatTooltipModule
     ],

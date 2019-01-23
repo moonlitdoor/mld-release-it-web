@@ -1,13 +1,22 @@
-<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="start center" class="mat-elevation-z6">
-    <span>ReleaseIt</span>
-    <span fxFlex></span>
-    <a matTooltip="Survey" mat-icon-button routerLink="survey">
-        <mat-icon aria-label="">assignment</mat-icon>
-    </a>
-    <login></login>
-    <button matTooltip="Menu" mat-icon-button [matMenuTriggerFor]="appMenu">
-        <mat-icon>more_vert</mat-icon>
-    </button>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
+        <span>ReleaseIt</span>
+        <span fxFlex></span>
+        <a matTooltip="Survey" mat-icon-button routerLink="survey">
+            <mat-icon aria-label="">assignment</mat-icon>
+        </a>
+        <login></login>
+        <button matTooltip="Menu" mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <nav mat-tab-nav-bar backgroundColor="primary" color="accent">
+            <a mat-tab-link routerLink="">Home</a>
+            <a mat-tab-link routerLink="trunkbased">Trunk Based</a>
+            <a mat-tab-link routerLink="gitflow">GitFlow</a>
+        </nav>
+    </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
