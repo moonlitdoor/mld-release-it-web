@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {AboutDialogComponent} from './about/about-dialog.component';
 import {MatIconRegistry} from "@angular/material";
 import {DomSanitizer} from "@angular/platform-browser";
+import {Analytics} from "./analytics/analytics";
 
 @Component({
     selector: 'app-root',
@@ -10,11 +11,12 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class AppComponent {
 
-    constructor(private dialog: MatDialog, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    constructor(private dialog: MatDialog, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private _: Analytics) {
         iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('assets/images/github-white.svg'));
     }
 
     openAboutDialog(): void {
+        Analytics.eventOpenAbout();
         AboutDialogComponent.open(this.dialog);
     }
 }

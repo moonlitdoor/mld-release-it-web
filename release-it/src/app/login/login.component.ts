@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {auth} from 'firebase/app';
 import {AuthService} from "../auth/auth.service";
+import {Analytics} from "../analytics/analytics";
 
 @Component({
     selector: 'login',
@@ -28,10 +29,12 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
+        Analytics.eventLogin();
         this.afAuth.auth.signInWithRedirect(this.provider);
     }
 
     logout() {
+        Analytics.eventLogout();
         this.afAuth.auth.signOut();
     }
 }

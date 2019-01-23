@@ -1,6 +1,8 @@
 export const ENVIRONMENT = {
     env: "Development",
     production: false,
+    googleAnalyticsId: "UA-68156775-3",
+    googleOptimizeId: "GTM-KCXCK7J",
     firebase: {
         config: {
             apiKey: "AIzaSyA8RXnDWd51_Xv2HoDXg6zRGOe9iESks6k",

@@ -23,6 +23,7 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from './login/login.component';
 import {LoginDialogComponent} from './login/login.dialog.component';
 import {SurveyComponent} from './survey/survey.component';
+import {Analytics} from "./analytics/analytics";
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import {SurveyComponent} from './survey/survey.component';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        AppRoutingModule,
         HttpClientModule,
         FlexLayoutModule,
         AngularFireModule.initializeApp(ENVIRONMENT.firebase.config),
@@ -47,10 +49,10 @@ import {SurveyComponent} from './survey/survey.component';
         MatMenuModule,
         MatListModule,
         MatToolbarModule,
-        MatTooltipModule,
-        AppRoutingModule
+        MatTooltipModule
     ],
     providers: [
+        Analytics,
         AboutService,
         AngularFirestore
     ],
