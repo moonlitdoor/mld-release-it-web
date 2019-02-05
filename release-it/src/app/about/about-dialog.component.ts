@@ -2,14 +2,15 @@ import {Component} from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {AboutService} from './about.service';
 import {ENVIRONMENT} from '../../environments/environment';
+import {Observable} from "rxjs";
 
 @Component({
     templateUrl: 'about-dialog.component.html'
 })
 export class AboutDialogComponent {
 
-    version: Promise<string>;
-    date: Promise<number>;
+    version: Observable<string>;
+    date: Observable<number>;
     env: string;
 
     static open(dialog: MatDialog): MatDialogRef<AboutDialogComponent> {

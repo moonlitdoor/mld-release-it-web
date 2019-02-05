@@ -1,6 +1,7 @@
 export const ENVIRONMENT = {
     env: "Production",
     production: true,
+    showTabs: false,
     googleAnalyticsId: "UA-68156775-2",
     googleOptimizeId: "GTM-MFCXTX4",
     firebase: {

@@ -43,6 +43,8 @@ gtag('config','` + ENVIRONMENT.googleAnalyticsId + `',{'optimize_id':'` + ENVIRO
                 gtag('config', ENVIRONMENT.googleAnalyticsId, {page_path: event.urlAfterRedirects});
             }
         });
+
+        // window['ga-disable-' + ENVIRONMENT.googleAnalyticsId] = true;
     }
 
     private static sendEvent(eventCategory: string, eventAction: string, eventLabel: string = null, eventValue: number = null) {
