@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
     <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
-        <span>ReleaseIt</span>
+        <span matTooltip="(click) -> { return release; }">ReleaseIt</span>
         <span fxFlex></span>
         <a matTooltip="Home" mat-icon-button routerLink="/" routerLinkActive="header-active-link"
            [routerLinkActiveOptions]="{exact:true}">
@@ -18,7 +18,8 @@
             <mat-icon>more_vert</mat-icon>
         </button>
     </mat-toolbar-row>
-    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" style="height: auto">
+    <mat-toolbar-row matTooltip="(click) -> { return release; }" matTooltipShowDelay="500" matTooltipHideDelay="2000"
+                     fxLayout="row" fxLayoutAlign="center center" style="height: auto">
         <div class="mat-display-3">Simplify releasing software to pushing a single button.</div>
     </mat-toolbar-row>
     <mat-toolbar-row *ngIf="showTabs">
