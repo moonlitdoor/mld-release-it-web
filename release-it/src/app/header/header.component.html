@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
+        <span>ReleaseIt</span>
+        <span fxFlex></span>
+        <a matTooltip="Home" mat-icon-button routerLink="/" routerLinkActive="header-active-link"
+           [routerLinkActiveOptions]="{exact:true}">
+            <mat-icon aria-label="">home</mat-icon>
+        </a>
+        <a matTooltip="Survey" mat-icon-button routerLink="/survey" routerLinkActive="header-active-link"
+           [routerLinkActiveOptions]="{exact:true}">
+            <mat-icon aria-label="">assignment</mat-icon>
+        </a>
+        <a matTooltip="Email Us" mat-icon-button href="mailto:support@releaseit.app">
+            <mat-icon aria-label="">email</mat-icon>
+        </a>
+        <login></login>
+        <button matTooltip="Menu" mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" style="height: auto">
+        <div class="mat-display-3">Simplify releasing software to pushing a single button.</div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showTabs">
+        <nav mat-tab-nav-bar backgroundColor="primary" color="accent">
+            <a mat-tab-link routerLink="">Home</a>
+            <a mat-tab-link routerLink="trunkbased">Trunk Based</a>
+            <a mat-tab-link routerLink="gitflow">GitFlow</a>
+            <a mat-tab-link routerLink="blog">Blog</a>
+        </nav>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="openAboutDialog()">About</button>
+    <a mat-menu-item href="https://github.com/moonlitdoor" target="_blank">GitHub</a>
+</mat-menu>

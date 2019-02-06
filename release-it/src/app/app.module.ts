@@ -26,6 +26,7 @@ import {BlogPostListComponent} from "./blog/post-list/blog-post-list.component";
 import {BlogService} from "./blog/blog.service";
 import {CopyrightComponent} from "./footer/copyright/copyright.component";
 import {FooterComponent} from "./footer/footer.component";
+import {HeaderComponent} from "./header/header.component";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from './login/login.component';
 import {LoginDialogComponent} from './login/login.dialog.component';
@@ -44,6 +45,7 @@ import {MonthPipe} from "./pipes/month.pipe";
         GitflowComponent,
         CopyrightComponent,
         FooterComponent,
+        HeaderComponent,
         HomeComponent,
         LoginComponent,
         LoginDialogComponent,
