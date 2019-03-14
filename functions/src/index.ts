@@ -1,6 +1,3 @@
-require('./blog');
-export * from './blog'
-
 require('./manual');
 export * from './manual'
 

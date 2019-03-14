@@ -3,7 +3,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from "@angular/material";
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
@@ -21,9 +23,6 @@ import {AboutDialogComponent} from './about/about-dialog.component';
 import {AboutService} from './about/about.service';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {BlogComponent} from "./blog/blog.component";
-import {BlogPostListComponent} from "./blog/post-list/blog-post-list.component";
-import {BlogService} from "./blog/blog.service";
 import {CopyrightComponent} from "./footer/copyright/copyright.component";
 import {FooterComponent} from "./footer/footer.component";
 import {HeaderComponent} from "./header/header.component";
@@ -40,8 +39,6 @@ import {MonthPipe} from "./pipes/month.pipe";
     declarations: [
         AboutDialogComponent,
         AppComponent,
-        BlogComponent,
-        BlogPostListComponent,
         GitflowComponent,
         CopyrightComponent,
         FooterComponent,
@@ -63,7 +60,9 @@ import {MonthPipe} from "./pipes/month.pipe";
         AngularFireAuthModule,
         AngularFirestoreModule,
         MatButtonModule,
+        MatCardModule,
         MatDialogModule,
+        MatDividerModule,
         MatExpansionModule,
         MatIconModule,
         MatMenuModule,
@@ -75,7 +74,6 @@ import {MonthPipe} from "./pipes/month.pipe";
     providers: [
         Analytics,
         AboutService,
-        BlogService,
         AngularFirestore
     ],
     bootstrap: [
