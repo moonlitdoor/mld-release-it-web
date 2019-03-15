@@ -5,5 +5,5 @@ const firestore: FirebaseFirestore.Firestore = admin.initializeApp(functions.con
 const COLLECTION_USERS = "users";
 
 exports.onUserDelete = functions.auth.user().onDelete((user) => {
-    firestore.collection(COLLECTION_USERS).doc(user.uid).delete();
+    return firestore.collection(COLLECTION_USERS).doc(user.uid).delete();
 });
