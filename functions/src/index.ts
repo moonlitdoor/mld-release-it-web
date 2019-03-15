@@ -1,6 +1,9 @@
 require('./manual');
 export * from './manual'
 
+require('./user');
+export * from './user'
+
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //

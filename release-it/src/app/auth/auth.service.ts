@@ -11,14 +11,14 @@ export class User {
 })
 export class AuthService {
 
-    private accessToken: string;
+    private accessTokenGithub: string;
     private userId: string;
 
     constructor(private db: AngularFirestore, private afAuth: AngularFireAuth) {
         this.afAuth.authState.subscribe(user => {
             if (user) {
                 this.db.collection('users').doc(user.uid).get().subscribe(value => {
-                    this.accessToken = value.get("accessToken");
+                    this.accessTokenGithub = value.get("accessTokenGithub");
                 });
                 this.userId = user.uid;
             }
@@ -26,6 +26,6 @@ export class AuthService {
     }
 
     setGitHubAccessToken(uid: string, accessToken: string) {
-        this.db.collection('users').doc(uid).set({accessToken: accessToken});
+        this.db.collection('users').doc(uid).set({accessTokenGithub: accessToken});
     }
 }
